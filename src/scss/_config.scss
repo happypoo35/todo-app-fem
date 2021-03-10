@@ -1,19 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
+// Primary
+
+$Bright-Blue: hsl(220, 98%, 61%);
+$Gradient-Blue: hsl(192, 100%, 67%);
+$Gradient-Purple: hsl(280, 87%, 65%);
+// $Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
 // Light Theme
 
-$Very-Light-Gray: hsl(0, 0%, 98%);
-$Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
-$Light-Grayish-Blue: hsl(233, 11%, 84%);
-$Dark-Grayish-Blue: hsl(236, 9%, 61%);
-$Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+$LT-Very-Light-Gray: hsl(0, 0%, 98%);
+$LT-Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+$LT-Light-Grayish-Blue: hsl(233, 11%, 84%);
+$LT-Dark-Grayish-Blue: hsl(236, 9%, 61%);
+$LT-Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 
 // Dark Theme
 
-$Very-Dark-Blue: hsl(235, 21%, 11%);
-$Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
-$Light-Grayish-Blue: hsl(234, 39%, 85%);
-$Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
-$Dark-Grayish-Blue: hsl(234, 11%, 52%);
-$Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
-$Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+$DT-Very-Dark-Blue: hsl(235, 21%, 11%);
+$DT-Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+$DT-Light-Grayish-Blue: hsl(234, 39%, 85%);
+$DT-Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+$DT-Dark-Grayish-Blue: hsl(234, 11%, 52%);
+$DT-Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+$DT-Darker-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+$mobile: 540px;
+
+@mixin mobile {
+  @media screen and(max-width: $mobile) {
+    @content;
+  }
+}

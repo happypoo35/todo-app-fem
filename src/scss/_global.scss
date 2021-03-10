@@ -6,8 +6,64 @@
   padding: 0;
 }
 
+%tr {
+  transition: 0.2s ease;
+}
+
+.container {
+  width: min(540px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pad {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.todos,
+.filters-container {
+  background: $DT-Very-Dark-Desaturated-Blue;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.5rem 2rem rgba(black, 0.2);
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   font-size: 1.125rem;
+
+  @include mobile {
+    font-size: 0.75rem;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.372em;
+  text-transform: uppercase;
+  color: white;
+
+  @include mobile {
+    font-size: 1.6875rem;
+  }
+}
+
+p {
+  color: $DT-Light-Grayish-Blue;
+  letter-spacing: -0.014em;
+  @extend %tr;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
 }
