@@ -121,13 +121,15 @@ input {
 }
 
 .todos {
+  overflow: hidden;
+
   @include mobile {
     margin-bottom: 1rem;
   }
 }
 
 .empty {
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.5rem 1.75rem;
   text-align: center;
   border-bottom: 1px solid $DT-Darker-Dark-Grayish-Blue;
   color: $DT-Very-Dark-Grayish-Blue;
@@ -138,6 +140,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: $DT-Very-Dark-Desaturated-Blue;
   border-bottom: 1px solid $DT-Darker-Dark-Grayish-Blue;
 
   @include mobile {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import data from "../data";
 import Todo from "./Todo";
 import Filters from "./Filters";
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 const TodosContainer = () => {
   const [todos, setTodos] = useState([]);
@@ -80,18 +80,47 @@ const TodosContainer = () => {
             placeholder="Create a new todo..."
           />
         </form>
-        <DragDropContext onDragEnd={(...props) => console.log(props)}>
+        <DragDropContext
+          onDragEnd={(param) => {
+            const srcId = param.source.index;
+            const destId = param.destination?.index;
+            if (destId === undefined) return;
+            todos.splice(destId, 0, todos.splice(srcId, 1)[0]);
+            console.log(srcId, destId);
+          }}
+        >
           <section className="todos" aria-label="todos">
-            {filteredTodos.map((item) => {
-              return (
-                <Todo
-                  key={item.id}
-                  {...item}
-                  todos={todos}
-                  setTodos={setTodos}
-                />
-              );
-            })}
+            <Droppable droppableId="droppable-1">
+              {(provided, _) => (
+                <div ref={provided.innerRef} {...provided.droppableProps}>
+                  {filteredTodos.map((item, i) => {
+                    return (
+                      <Draggable
+                        key={item.id}
+                        draggableId={"draggable-" + item.id}
+                        index={i}
+                      >
+                        {(provided, _) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                          >
+                            <Todo
+                              key={item.id}
+                              {...item}
+                              todos={todos}
+                              setTodos={setTodos}
+                            />
+                          </div>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
             {filteredTodos.length === 0 && (
               <p className="empty">No Items to Display</p>
             )}
