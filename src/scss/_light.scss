@@ -1,0 +1,91 @@
+.App.light {
+  background: $LT-Very-Light-Gray;
+
+  .bg {
+    background: no-repeat center/cover url("../images/bg-desktop-light.jpg");
+
+    @include mobile {
+      background: no-repeat center/cover url("../images/bg-mobile-light.jpg");
+    }
+  }
+
+  input,
+  .todos,
+  .todo,
+  .filters-container {
+    background: white;
+  }
+
+  input,
+  .todos,
+  .filters-container {
+    background: white;
+    box-shadow: 0 0.5rem 2rem rgba(black, 0.1);
+  }
+
+  .circle {
+    border-color: #e8e8ea;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  input {
+    color: $LT-Very-Dark-Grayish-Blue;
+
+    &::placeholder {
+      color: $LT-Dark-Grayish-Blue;
+    }
+  }
+
+  p {
+    color: $LT-Very-Dark-Grayish-Blue;
+  }
+
+  .todo,
+  .empty {
+    border-color: $LT-Very-Light-Grayish-Blue;
+  }
+
+  .check {
+    background: #e8e8ea;
+
+    &::after {
+      background: white;
+    }
+  }
+
+  .todo.completed {
+    p {
+      color: $LT-Light-Grayish-Blue;
+    }
+  }
+
+  .left,
+  .clear-completed,
+  .filter,
+  .tip,
+  .empty {
+    color: $LT-Dark-Grayish-Blue;
+  }
+
+  .filter,
+  .clear-completed {
+    &:hover {
+      color: $LT-Very-Dark-Grayish-Blue;
+    }
+  }
+
+  .close {
+    &:hover {
+      svg * {
+        stroke: $LT-Very-Dark-Grayish-Blue;
+      }
+    }
+
+    svg * {
+      stroke: $LT-Dark-Grayish-Blue;
+    }
+  }
+}

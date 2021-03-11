@@ -86,7 +86,6 @@ const TodosContainer = () => {
             const destId = param.destination?.index;
             if (destId === undefined) return;
             todos.splice(destId, 0, todos.splice(srcId, 1)[0]);
-            console.log(srcId, destId);
           }}
         >
           <section className="todos" aria-label="todos">
