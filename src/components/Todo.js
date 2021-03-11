@@ -30,7 +30,7 @@ const Todo = ({ id, text, isCompleted, todos, setTodos }) => {
         <FaCheck />
       </button>
       <p>{text}</p>
-      <button className="close" onClick={handleRemove}>
+      <button className="close" aria-label="remove item" onClick={handleRemove}>
         <GrClose />
       </button>
     </article>

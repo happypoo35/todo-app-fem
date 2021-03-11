@@ -77,6 +77,8 @@ const TodosContainer = () => {
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
+            name="input"
+            aria-label="add new todo"
             placeholder="Create a new todo..."
           />
         </form>
